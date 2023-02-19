@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Backend.Entity;
+using Backend.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,5 +11,14 @@ namespace Backend.Controllers
 {
     public class UsersController : ApiController
     {
+        [HttpGet]
+        [Route("api/users")]
+        public HttpResponseMessage FindAllUser()
+        {
+            EntityRepository<User> value = new EntityRepository<User>();
+            var listOfAllUser = value.FindAll();
+
+            return Request.CreateResponse(HttpStatusCode.OK, listOfAllUser);
+        }
     }
 }
