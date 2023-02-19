@@ -5,7 +5,6 @@ using NHibernate.SqlCommand;
 using NHibernate.Tool.hbm2ddl;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -25,7 +24,7 @@ namespace Backend.Entity
                 {
                     var cfg = MySQLConfiguration.Standard
                         .ConnectionString(c => c.Is(
-             "Server=localhost; Port=3306; Database=user_manager; Uid=root; Pwd;default command timeout=20000"));
+             "Server=localhost; Port=3306; Database=user_manager; Uid=root; Pwd=;default command timeout=20000"));
                     _sessionFactory = Fluently.Configure()
                         .Database(cfg).Mappings(
                         m => m.FluentMappings.AddFromAssemblyOf<User>()

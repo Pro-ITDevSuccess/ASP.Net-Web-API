@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Backend.Interfaces
 {
-    public class EntityRepository<T> where T : Backend.Entity.Entity
+    public class EntityRepository<T> where T : Entity.Entity
     {
         public virtual async Task<T> FindById(Guid Id)
         {
@@ -29,9 +29,9 @@ namespace Backend.Interfaces
                 {
                     query = query.Skip(skip);
                 }
-                if (take > 0)
+                if (take > -1)
                 {
-                    query = query.Take(skip);
+                    query = query.Take(take);
                 }
 
                 var a = await query.ToListAsync<T>();
@@ -67,7 +67,7 @@ namespace Backend.Interfaces
                 {
                     try
                     {
-                        session.SaveOrUpdateAsync(entity);
+                        session.SaveOrUpdate(entity);
                         transaction.Commit();
                     }
                     catch (Exception e)
