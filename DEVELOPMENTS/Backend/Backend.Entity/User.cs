@@ -12,5 +12,6 @@ namespace Backend.Entity
         public virtual string User_LastName { get; set; }
         public virtual string User_CIN { get; set; }
         public virtual DateTime User_BirthDay { get; set; }
+        public virtual bool User_Genre { get; set; }
     }
 }
