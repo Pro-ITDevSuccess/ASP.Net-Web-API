@@ -1,0 +1,6 @@
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend.State\bin\Debug\Backend.State.dll
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend.State\bin\Debug\Backend.State.pdb
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend.State\obj\Debug\Backend.State.csproj.AssemblyReference.cache
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend.State\obj\Debug\Backend.State.csproj.CoreCompileInputs.cache
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend.State\obj\Debug\Backend.State.dll
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend.State\obj\Debug\Backend.State.pdb
