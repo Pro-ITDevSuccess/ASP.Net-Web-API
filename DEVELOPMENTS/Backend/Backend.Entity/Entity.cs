@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Backend.Entity
 {
-    class Class1
+    public abstract class  Entity
     {
+        public virtual Guid Id { get; set; }
     }
 }
