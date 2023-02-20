@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend.Interfaces
+namespace Backend.Business
 {
     public class EntityRepository<T> where T : Entity.Entity
     {
