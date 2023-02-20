@@ -14,6 +14,9 @@ namespace Backend.Entity.Mapping
             Abstract();
             Map(x => x.Email).Not.Nullable();
             Map(x => x.Number).Not.Nullable();
+
+            References<User>(x => x.User)
+                .Column("UserId");
         }
     }
 }

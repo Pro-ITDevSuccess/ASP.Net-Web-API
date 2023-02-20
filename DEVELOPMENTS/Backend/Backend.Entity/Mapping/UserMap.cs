@@ -25,6 +25,12 @@ namespace Backend.Entity.Mapping
             HasManyToMany<City>(x => x.City)
                 .Table("Adress")
                 .Not.LazyLoad();
+
+            HasMany<Contacts>(x => x.Contacts)
+                .Inverse()
+                .Cascade.AllDeleteOrphan()
+                .KeyColumn("UserId")
+                .AsBag();
         }
     }
 }
