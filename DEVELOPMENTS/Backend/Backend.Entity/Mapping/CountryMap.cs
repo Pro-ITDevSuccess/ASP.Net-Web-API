@@ -13,7 +13,7 @@ namespace Backend.Entity.Mapping
         {
             Abstract();
             Map(x => x.Country_name).Not.Nullable();
-            Map(x => x.Country_name).Not.Nullable();
+            Map(x => x.Code_Postal).Not.Nullable();
         }
     }
 }

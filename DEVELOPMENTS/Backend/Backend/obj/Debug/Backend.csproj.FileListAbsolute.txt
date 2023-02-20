@@ -216,3 +216,8 @@ D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\obj\Debug\Backend.cspro
 D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\obj\Debug\Backend.csproj.CopyComplete
 D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\obj\Debug\Backend.dll
 D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\obj\Debug\Backend.pdb
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\bin\Unity.Abstractions.dll
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\bin\Unity.Container.dll
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\bin\System.Threading.Tasks.Extensions.dll
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\bin\Unity.Abstractions.pdb
+D:\WORK\GitHub\User Manager\DEVELOPMENTS\Backend\Backend\bin\Unity.Container.pdb

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Backend.Controllers
@@ -26,7 +27,7 @@ namespace Backend.Controllers
             EntityRepository<User> value = new EntityRepository<User>();
             var listOfAllUser = value.FindAll();
             */
-            var listOfAllUser = value.FindAll();
+            var listOfAllUser = _usersRepository.FindAll();
 
             return Request.CreateResponse(HttpStatusCode.OK, listOfAllUser);
         }
