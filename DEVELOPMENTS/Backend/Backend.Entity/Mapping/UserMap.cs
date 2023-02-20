@@ -17,6 +17,10 @@ namespace Backend.Entity.Mapping
             Map(x => x.User_CIN).Not.Nullable();
             Map(x => x.User_BirthDay).Not.Nullable();
             Map(x => x.User_Genre).Not.Nullable();
+
+            HasManyToMany<Country>(x => x.Country)
+                .Table("Adress")
+                .Not.LazyLoad();
         }
     }
 }

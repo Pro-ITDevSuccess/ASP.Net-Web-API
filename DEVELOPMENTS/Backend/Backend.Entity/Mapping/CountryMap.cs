@@ -14,6 +14,11 @@ namespace Backend.Entity.Mapping
             Abstract();
             Map(x => x.Country_name).Not.Nullable();
             Map(x => x.Code_Postal).Not.Nullable();
+            HasManyToMany<User>(x => x.User)
+                .Inverse()
+                .Cascade.All()
+                .Table("Adress")
+                .Not.LazyLoad();
         }
     }
 }
