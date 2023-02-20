@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend.Business
 {
-    class Class1
+    class UserRepository
     {
     }
 }
