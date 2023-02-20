@@ -14,6 +14,7 @@ namespace Backend.Entity
         public virtual DateTime User_BirthDay { get; set; }
         public virtual bool User_Genre { get; set; }
         public virtual IList<Country> Country { get; set; }
+        public virtual IList<City> City { get; set; }
 
     }
 }

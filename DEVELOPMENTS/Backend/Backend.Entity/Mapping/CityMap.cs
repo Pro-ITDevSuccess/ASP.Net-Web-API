@@ -13,6 +13,12 @@ namespace Backend.Entity.Mapping
         {
             Abstract();
             Map(x => x.City_Name).Not.Nullable();
+
+            HasManyToMany<User>(x => x.User)
+                .Inverse()
+                .Cascade.All()
+                .Table("Adress")
+                .Not.LazyLoad();
         }
     }
 }

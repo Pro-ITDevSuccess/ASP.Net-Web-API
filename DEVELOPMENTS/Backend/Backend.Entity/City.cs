@@ -9,5 +9,6 @@ namespace Backend.Entity
     public class City : Entity
     {
         public virtual string City_Name { get; set; }
+        public virtual IList<User> User { get; set; }
     }
 }

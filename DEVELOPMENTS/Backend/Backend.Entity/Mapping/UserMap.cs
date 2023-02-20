@@ -21,6 +21,10 @@ namespace Backend.Entity.Mapping
             HasManyToMany<Country>(x => x.Country)
                 .Table("Adress")
                 .Not.LazyLoad();
+
+            HasManyToMany<City>(x => x.City)
+                .Table("Adress")
+                .Not.LazyLoad();
         }
     }
 }
