@@ -11,11 +11,21 @@ namespace Backend.Controllers
 {
     public class UsersController : ApiController
     {
+        public EntityRepository<User> _usersRepository = null;
+
+        public UsersController(EntityRepository<User> usersRepository)
+        {
+            _usersRepository = usersRepository;
+        }
+
         [HttpGet]
         [Route("api/users")]
         public HttpResponseMessage FindAllUser()
         {
+            /*
             EntityRepository<User> value = new EntityRepository<User>();
+            var listOfAllUser = value.FindAll();
+            */
             var listOfAllUser = value.FindAll();
 
             return Request.CreateResponse(HttpStatusCode.OK, listOfAllUser);

@@ -11,12 +11,22 @@ namespace Backend.Controllers
 {
     public class CountryController : ApiController
     {
+        public EntityRepository<Country> _countryRepository = null;
+
+        public CountryController(EntityRepository<Country> countryRepository)
+        {
+            _countryRepository = countryRepository;
+        }
+
         [HttpGet]
         [Route("api/country")]
         public HttpResponseMessage GetAllCountry()
         {
+            /*
             EntityRepository<Country> value = new EntityRepository<Country>();
             var allCountry = value.FindAll();
+            */
+            var allCountry = _countryRepository.FindAll();
 
             return Request.CreateResponse(HttpStatusCode.OK, allCountry);
         }
