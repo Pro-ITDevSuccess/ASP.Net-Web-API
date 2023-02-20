@@ -156,6 +156,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
