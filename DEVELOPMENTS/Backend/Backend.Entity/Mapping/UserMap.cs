@@ -26,11 +26,14 @@ namespace Backend.Entity.Mapping
                 .Table("Adress")
                 .Not.LazyLoad();
 
-            HasMany<Contacts>(x => x.Contacts)
+            HasMany(x => x.Contacts)
                 .Inverse()
-                .Cascade.AllDeleteOrphan()
+                .KeyColumn("User_Id")
+                //.Cascade.AllDeleteOrphan()
+                .Cascade.All()
+                /*
                 .KeyColumn("UserId")
-                .AsBag();
+                .AsBag()*/;
         }
     }
 }

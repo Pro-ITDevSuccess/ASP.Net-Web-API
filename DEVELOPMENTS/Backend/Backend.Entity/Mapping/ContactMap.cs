@@ -15,8 +15,10 @@ namespace Backend.Entity.Mapping
             Map(x => x.Email).Not.Nullable();
             Map(x => x.Number).Not.Nullable();
 
-            References<User>(x => x.User)
-                .Column("UserId");
+            References(x => x.User)
+                /*.Column("UserId")*/
+                .Column("User_Id")
+                .Nullable().Not.LazyLoad();
         }
     }
 }
