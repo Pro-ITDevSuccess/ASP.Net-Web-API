@@ -30,7 +30,7 @@ namespace Backend
 
         private static void SetDependencies(UnityContainer container)
         {
-            //container.RegisterType<EntityRepository<User>, UserRepository>();
+            container.RegisterType<EntityRepository<Contacts>, ContactRepository>();
             container.RegisterType<EntityRepository<User>>();
         }
     }

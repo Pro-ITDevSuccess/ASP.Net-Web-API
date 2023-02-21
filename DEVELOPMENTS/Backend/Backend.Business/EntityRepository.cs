@@ -39,15 +39,15 @@ namespace Backend.Business
             }
         }
 
-        public virtual async Task SaveOrUpdateAsynk(T entity)
+        public virtual void SaveOrUpdate(T entity)
         {
-            using (ISession session= NHibernateHelper.GetSessionFactory().OpenSession())
+            using (ISession session = NHibernateHelper.GetSessionFactory().OpenSession())
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
                     try
                     {
-                        await session.SaveOrUpdateAsync(entity);
+                        session.SaveOrUpdate(entity);
                         transaction.Commit();
                     }
                     catch (Exception e)
@@ -59,15 +59,15 @@ namespace Backend.Business
             }
         }
 
-        public virtual void SaveOrUpdate(T entity)
+        public virtual async Task SaveOrUpdateAsynk(T entity)
         {
-            using (ISession session = NHibernateHelper.GetSessionFactory().OpenSession())
+            using (ISession session= NHibernateHelper.GetSessionFactory().OpenSession())
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
                     try
                     {
-                        session.SaveOrUpdate(entity);
+                        await session.SaveOrUpdateAsync(entity);
                         transaction.Commit();
                     }
                     catch (Exception e)
