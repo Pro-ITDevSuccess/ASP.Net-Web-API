@@ -16,11 +16,5 @@ namespace Backend.Entity
         public virtual IList<Country> Country { get; set; }
         public virtual IList<City> City { get; set; }
         public virtual IList<Contacts> Contacts { get; set; }
-
-        public User()
-        {
-            Contacts = new List<Contacts>();
-        }
-
     }
 }

@@ -27,10 +27,11 @@ namespace Backend.Entity.Mapping
                 .Not.LazyLoad();
 
             HasMany(x => x.Contacts)
-                .Inverse()
-                .KeyColumn("User_Id")
-                //.Cascade.AllDeleteOrphan()
-                .Cascade.All()
+                //.Inverse()
+                //.KeyColumn("User_Id")
+                .Cascade.AllDeleteOrphan()
+                //.Cascade.All()
+                .Not.LazyLoad()
                 /*
                 .KeyColumn("UserId")
                 .AsBag()*/;

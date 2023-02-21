@@ -17,14 +17,11 @@ namespace Backend.Controllers
         public EntityRepository<Contacts> _contactsRepository = null;
         public EntityRepository<User> _usersRepository = null;
 
-        private readonly ISession _session;
-
-        public ContactsController(EntityRepository<Contacts> contactsRepository, EntityRepository<User> usersRepository, ISession session)
+        public ContactsController(EntityRepository<Contacts> contactsRepository, EntityRepository<User> usersRepository)
         {
             _contactsRepository = contactsRepository;
             _usersRepository = usersRepository;
-            _session = session;
-        }
+        }   
 
         [HttpGet]
         [Route("api/contacts")]
@@ -34,11 +31,12 @@ namespace Backend.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, getAllContact);
         }
         
+        
         [HttpPost]
         [Route("api/contacts/add")]
-        public async Task<HttpResponseMessage> AddContacts([FromBody] Contacts contactInput, [FromUri] Guid UserId)
+        public async Task<HttpResponseMessage> AddContacts([FromBody] Contacts contactInput, [FromBody] Guid User_Id)
         {
-            var specificUser = await _usersRepository.FindById(UserId);
+            var specificUser = await _usersRepository.FindById(User_Id);
 
             if (specificUser == null)
             {
@@ -46,11 +44,10 @@ namespace Backend.Controllers
             }
 
             specificUser.Contacts.Add(contactInput);
-            _usersRepository.SaveOrUpdate(specificUser);
+            _usersRepository.SaveOrUpdateAsynk(specificUser);
 
             return Request.CreateResponse(HttpStatusCode.OK, "Utilisateur d'existe Pas !");
         }
-        
-        
+         
     }
 }
