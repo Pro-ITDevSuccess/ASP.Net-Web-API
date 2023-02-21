@@ -31,7 +31,7 @@ namespace Backend.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, getAllContact);
         }
         
-        
+        /*
         [HttpPost]
         [Route("api/contacts/add")]
         public async Task<HttpResponseMessage> AddContacts([FromBody] Contacts contactInput, [FromBody] Guid User_Id)
@@ -40,7 +40,8 @@ namespace Backend.Controllers
 
             if (specificUser == null)
             {
-                return Request.CreateResponse(HttpStatusCode.NotFound, "Utilisateur d'existe Pas !"/*RedirectToAction("Index", "Users")*/);
+                //return Request.CreateResponse(HttpStatusCode.NotFound, RedirectToAction("Index", "Users"));
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Utilisateur d'existe Pas !");
             }
 
             specificUser.Contacts.Add(contactInput);
@@ -48,6 +49,6 @@ namespace Backend.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, "Utilisateur d'existe Pas !");
         }
-         
+         */
     }
 }
