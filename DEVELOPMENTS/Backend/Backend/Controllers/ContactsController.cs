@@ -44,7 +44,7 @@ namespace Backend.Controllers
                 return Request.CreateResponse(HttpStatusCode.NotFound, "Utilisateur d'existe Pas !");
             }
 
-            specificUser.Contacts.Add(contactInput);
+            specificUser.User_Contacts.Add(contactInput);
             _usersRepository.SaveOrUpdate(specificUser);
 
             return Request.CreateResponse(HttpStatusCode.OK, "Utilisateur d'existe Pas !");

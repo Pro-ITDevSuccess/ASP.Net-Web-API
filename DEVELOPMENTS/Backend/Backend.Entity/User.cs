@@ -13,8 +13,8 @@ namespace Backend.Entity
         public virtual string User_CIN { get; set; }
         public virtual DateTime User_BirthDay { get; set; }
         public virtual bool User_Genre { get; set; }
-        public virtual IList<Country> Country { get; set; }
-        public virtual IList<City> City { get; set; }
-        public virtual IList<Contacts> Contacts { get; set; }
+        public virtual IList<Country> User_Country { get; set; }
+        public virtual IList<City> User_City { get; set; }
+        public virtual IList<Contacts> User_Contacts { get; set; }
     }
 }

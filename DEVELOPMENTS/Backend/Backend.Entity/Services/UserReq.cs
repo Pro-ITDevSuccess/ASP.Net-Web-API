@@ -13,6 +13,9 @@ namespace Backend.Entity.Services
         public virtual string User_CIN { get; set; }
         public virtual DateTime User_BirthDay { get; set; }
         public virtual bool User_Genre { get; set; }
+        public virtual List<CountryReq> User_Country { get; set; }
+        public virtual List<CityReq> User_City { get; set; }
+
         public virtual List<ContactReq> User_Contact { get; set; }
     }
 }

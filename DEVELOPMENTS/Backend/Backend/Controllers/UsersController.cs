@@ -87,7 +87,18 @@ namespace Backend.Controllers
                 User_BirthDay = userInput.User_BirthDay,
                 User_CIN = userInput.User_CIN,
                 User_Genre = userInput.User_Genre,
-                Contacts = userInput.User_Contact.Select(c => new Contacts
+                User_Country = userInput.User_Country.Select(c => new Country 
+                { 
+                    Country_Name = c.Country_Name,
+                    Code_Postal = c.Code_Postal
+                }).ToList(),
+                
+                User_City = userInput.User_City.Select(c => new City
+                {
+                    City_Name = c.City_Name,
+                }).ToList(),
+                
+                User_Contacts = userInput.User_Contact.Select(c => new Contacts
                 {
                     Email = c.Email,
                     Number = c.Number

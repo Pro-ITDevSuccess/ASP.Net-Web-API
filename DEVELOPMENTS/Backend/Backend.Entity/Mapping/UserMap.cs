@@ -18,15 +18,17 @@ namespace Backend.Entity.Mapping
             Map(x => x.User_BirthDay).Not.Nullable();
             Map(x => x.User_Genre).Not.Nullable();
 
-            HasManyToMany<Country>(x => x.Country)
-                .Table("Adress")
+            HasManyToMany<Country>(x => x.User_Country)
+                .Table("Users_Country")
+                .Cascade.All()
                 .Not.LazyLoad();
-
-            HasManyToMany<City>(x => x.City)
-                .Table("Adress")
+            
+            HasManyToMany<City>(x => x.User_City)
+                .Table("Users_City")
+                .Cascade.All()
                 .Not.LazyLoad();
-
-            HasMany(x => x.Contacts)
+            
+            HasMany(x => x.User_Contacts)
                 //.KeyColumn("User_Id")
                 .Cascade.AllDeleteOrphan()
                 //.Inverse()
