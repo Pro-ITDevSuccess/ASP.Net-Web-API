@@ -25,5 +25,7 @@ namespace Backend.Controllers
             var listOfCity = _cityRepository.FindAll();
             return Request.CreateResponse(HttpStatusCode.OK, listOfCity);
         }
+
+        
     }
 }

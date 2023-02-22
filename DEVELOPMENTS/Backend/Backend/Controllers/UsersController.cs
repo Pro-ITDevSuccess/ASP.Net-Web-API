@@ -36,16 +36,16 @@ namespace Backend.Controllers
 
         [HttpGet]
         [Route("api/users")]
-        public HttpResponseMessage FindUserById([FromUri] Guid Id)
+        public async Task<HttpResponseMessage> FindUserById([FromUri] Guid Id)
         {
-            var idUser = _usersRepository.FindById(Id);
-            if (idUser == null)
+            var user = await _usersRepository.FindById(Id);
+            if (user == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound, "L'id de l'utisateur saisi n'existe pas !");
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.OK, idUser);
+                return Request.CreateResponse(HttpStatusCode.OK, user);
             }
         }
 
@@ -53,6 +53,7 @@ namespace Backend.Controllers
         [Route("api/users/add")]
         public HttpResponseMessage AddUser([FromBody] UserReq userInput)
         {
+            /*
             User user = new User();
     
             user.User_FirstName = userInput.User_FirstName;
@@ -69,8 +70,29 @@ namespace Backend.Controllers
                     Number = item.Number
                 });
             }
+            */
+
+            var user = MapUser(userInput);
+
             _usersRepository.SaveOrUpdate(user);
             return Request.CreateResponse(HttpStatusCode.Created, "Utilisateur Enregistrer !");  
+        }
+
+        private User MapUser(UserReq userInput)
+        {
+            return new User
+            {
+                User_FirstName = userInput.User_FirstName,
+                User_LastName = userInput.User_LastName,
+                User_BirthDay = userInput.User_BirthDay,
+                User_CIN = userInput.User_CIN,
+                User_Genre = userInput.User_Genre,
+                Contacts = userInput.User_Contact.Select(c => new Contacts
+                {
+                    Email = c.Email,
+                    Number = c.Number
+                }).ToList()
+            };
         }
 
         [HttpPatch]
