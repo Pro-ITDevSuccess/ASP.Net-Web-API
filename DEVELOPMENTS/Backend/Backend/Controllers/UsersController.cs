@@ -20,15 +20,16 @@ namespace Backend.Controllers
             _usersRepository = usersRepository;
         }
 
+
         [HttpGet]
         [Route("api/users")]
-        public HttpResponseMessage FindAllUsers()
+        public async Task<HttpResponseMessage> FindAllUsers()
         {
             /*
             EntityRepository<User> value = new EntityRepository<User>();
             var listOfAllUser = value.FindAll();
             */
-            var listOfAllUser = _usersRepository.FindAll();
+            List<User> listOfAllUser = await _usersRepository.FindAll();
 
             return Request.CreateResponse(HttpStatusCode.OK, listOfAllUser);
         }
@@ -59,7 +60,15 @@ namespace Backend.Controllers
             user.User_BirthDay = userInput.User_BirthDay;
             user.User_CIN = userInput.User_CIN;
             user.User_Genre = userInput.User_Genre;
-
+            user.Contacts = new List<Contacts> ();
+            foreach (var item in userInput.User_Contact)
+            {
+                user.Contacts.Add(new Contacts
+                {
+                    Email = item.Email,
+                    Number = item.Number
+                });
+            }
             _usersRepository.SaveOrUpdate(user);
             return Request.CreateResponse(HttpStatusCode.Created, "Utilisateur Enregistrer !");  
         }

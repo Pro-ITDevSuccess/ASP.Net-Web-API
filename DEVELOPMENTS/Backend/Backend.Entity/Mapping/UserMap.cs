@@ -27,9 +27,11 @@ namespace Backend.Entity.Mapping
                 .Not.LazyLoad();
 
             HasMany(x => x.Contacts)
-                .KeyColumn("User_Id")
+                //.KeyColumn("User_Id")
                 .Cascade.AllDeleteOrphan()
-                .Inverse();
+                //.Inverse()
+                .Not.LazyLoad()
+                ;
         }
     }
 }

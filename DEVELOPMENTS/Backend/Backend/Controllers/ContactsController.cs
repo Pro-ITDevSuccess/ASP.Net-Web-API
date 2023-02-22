@@ -31,10 +31,10 @@ namespace Backend.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, getAllContact);
         }
         
-        /*
+        
         [HttpPost]
         [Route("api/contacts/add")]
-        public async Task<HttpResponseMessage> AddContacts([FromBody] Contacts contactInput, [FromBody] Guid User_Id)
+        public async Task<HttpResponseMessage> AddContacts([FromBody] Contacts contactInput, [FromUri] Guid User_Id)
         {
             var specificUser = await _usersRepository.FindById(User_Id);
 
@@ -49,6 +49,6 @@ namespace Backend.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, "Utilisateur d'existe Pas !");
         }
-         */
+         
     }
 }

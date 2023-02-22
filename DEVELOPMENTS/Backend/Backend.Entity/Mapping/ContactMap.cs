@@ -16,7 +16,7 @@ namespace Backend.Entity.Mapping
             Map(x => x.Number).Not.Nullable();
 
             References(x => x.User)
-                .Column("User_Id")
+               //.Column("User_Id")
                 /*.Nullable()*/.Not.LazyLoad();
         }
     }
